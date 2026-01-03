@@ -1,0 +1,212 @@
+@use '../base/variables' as v;
+
+.final-cta {
+    position: relative;
+    padding: 6rem 2rem;
+    background:
+        radial-gradient(
+            1200px 400px at 50% 0%,
+            rgba(0, 198, 248, 0.15),
+            transparent 60%
+        ),
+        v.$color-dark;
+    overflow: hidden;
+}
+
+.final-cta__inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: v.$color-surface;
+    border-radius: v.$radius-lg;
+    box-shadow: v.$shadow-lg;
+    border: 1px solid v.$color-border;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ================= TITLES ================= */
+
+.final-cta__title {
+    font-family: v.$font-heading;
+    font-size: clamp(v.$fs-xl, 4vw, v.$fs-3xl);
+    font-weight: v.$fw-bold;
+    line-height: 1.1;
+    color: v.$color-text-primary;
+}
+
+.final-cta__subtitle {
+    max-width: 620px;
+    margin: 0 auto;
+    font-size: v.$fs-lg;
+    line-height: 1.6;
+    color: v.$color-text-secondary;
+}
+
+/* ================= BUTTON ================= */
+
+.final-cta__button {
+    margin-top: 1.5rem;
+    align-self: center;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1rem 3rem;
+    font-size: v.$fs-base;
+    font-weight: v.$fw-semibold;
+    font-family: v.$font-primary;
+    text-decoration: none;
+
+    color: v.$color-dark;
+    background: linear-gradient(
+        135deg,
+        v.$color-primary,
+        v.$color-secondary
+    );
+
+    border-radius: 999px;
+    box-shadow: v.$shadow-glow;
+    transition:
+        transform v.$transition-fast,
+        box-shadow v.$transition-fast;
+
+    will-change: transform;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0 35px rgba(0, 198, 248, 0.8);
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: v.$shadow-md;
+    }
+}
+
+
+/* ================= SOCIAL PROOF ================= */
+
+.final-cta__social {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: .5rem;
+    margin-top: .5rem;
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all .6s v.$ease-out-smooth;
+}
+
+.final-cta__counter {
+    font-size: v.$fs-2xl;
+    font-weight: v.$fw-bold;
+    font-family: v.$font-heading;
+    color: v.$color-primary;
+}
+
+.final-cta__label {
+    font-size: v.$fs-sm;
+    color: v.$color-text-muted;
+}
+
+/* ================= ANIMATION STATE ================= */
+
+.final-cta.is-visible {
+    .final-cta__social {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: .15s;
+    }
+}
+
+.final-cta__counter-wrapper {
+    display: inline-flex;
+    align-items: baseline;
+    gap: .2rem;
+}
+
+/* PLUS */
+
+.final-cta__plus {
+    font-size: v.$fs-xl;
+    font-weight: v.$fw-bold;
+    color: v.$color-primary;
+
+    opacity: 0;
+    transform: scale(.6);
+    transition: all .35s v.$ease-out-smooth;
+}
+
+/* COUNTER */
+
+.final-cta__counter {
+    font-size: v.$fs-2xl;
+    font-weight: v.$fw-bold;
+    font-family: v.$font-heading;
+    color: v.$color-primary;
+}
+
+/* LABEL */
+
+.final-cta__label {
+    display: flex;
+    flex-direction: column;
+    font-size: v.$fs-sm;
+    color: v.$color-text-muted;
+    line-height: 1.2;
+}
+
+/* MICROCOPY */
+
+.final-cta__microcopy {
+    margin-top: .1rem;
+    font-style: normal;
+    font-size: v.$fs-xs;
+    color: rgba(0, 198, 248, 0.75);
+    opacity: 0;
+    transform: translateY(6px);
+    transition: all .4s v.$ease-out-smooth;
+}
+
+/* ================= STATE ACTIVO ================= */
+
+.final-cta.is-visible {
+    .final-cta__plus {
+        opacity: 1;
+        transform: scale(1);
+        transition-delay: .1s;
+    }
+
+    .final-cta__microcopy {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: .25s;
+    }
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+    .final-cta {
+        padding: 4rem 1.5rem;
+    }
+
+    .final-cta__inner {
+        padding: 3rem 1.5rem;
+    }
+
+    .final-cta__title {
+        font-size: v.$fs-2xl;
+    }
+
+    .final-cta__subtitle {
+        font-size: v.$fs-base;
+    }
+}

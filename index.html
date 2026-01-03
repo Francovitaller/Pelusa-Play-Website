@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelusa Play - Organiza tus competencias</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+<header class="site-header">
+    <div class="site-header__inner">
+
+        <!-- Logo -->
+        <button class="site-header__logo" data-scroll data-target="#hero">
+            <img src="./assets/iconos/pelusaplay-isologo.png" alt="Pelusa Play" />
+        </button>
+
+        <!-- Nav -->
+        <nav class="site-header__nav">
+            <button data-scroll data-target="#features">Producto</button>
+            <button data-scroll data-target="#how-it-works">Cómo funciona</button>
+            <button data-scroll data-target="#use-cases">Casos de uso</button>
+        </nav>
+
+        <!-- Actions -->
+        <div class="site-header__actions">
+            <a href="/login" class="btn btn--secondary btn--sm">Iniciar sesión</a>
+
+            <button
+                class="btn btn--primary btn--sm"
+                data-scroll
+                data-target="#final-cta"
+            >
+                Registrarse
+            </button>
+        </div>
+
+    </div>
+</header>
+
+
+
+
+    <main>
+        <section class="hero" id="hero">
+
+            <!-- Video de fondo -->
+            <video class="hero__video" autoplay muted loop playsinline preload="auto">
+                <source src="./assets/video/¿Qué es Dios_ _ Homenaje a Diego Maradona.mp4" type="video/mp4">
+            </video>
+
+            <!-- Overlay oscuro -->
+            <div class="hero__overlay"></div>
+
+            <!-- Contenido -->
+            <div class="hero__container">
+
+                <!-- Visual -->
+                <div class="hero__visual">
+
+                    <div class="hero__phone">
+                        <img src="./assets/mockupvisual-celular.png" alt="App torneo en móvil" />
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="hero__content">
+                    <div class="hero__badges">
+                        <span>Deporte</span>
+                        <span>Esports</span>
+                    </div>
+                    <h1 class="hero__title">
+                        Planificá tu próximo
+                        <span class="hero__rotating">
+                            <span id="rotating-text">torneo</span>
+                        </span>
+                        en minutos con Pelusa Play
+                    </h1>
+
+
+                    <ul class="hero__features">
+                        <li>Rápido y sencillo planificador de torneos</li>
+                        <li>Tablas, fixtures y eliminatorias automáticas</li>
+                        <li>Página pública para participantes</li>
+                    </ul>
+
+                    <div class="hero__actions">
+<a href="javascript:void(0)" data-scroll data-target="#final-cta">
+
+                        <a href="#" class="btn btn--ghost">Ver demo</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+        <section class="problem-solution" data-scroll>
+
+            <p class="ps-eyebrow">Antes vs Ahora</p>
+            <h2 class="ps-heading">
+                Organizar torneos no debería ser un problema
+            </h2>
+
+            <div class="problem-solution__inner">
+
+                <!-- PROBLEMA -->
+                <div class="ps-card ps-card--problem">
+                    <div class="ps-media">
+                        <img src="./assets/el diego y pele pensando.png" alt="Caos en competencias" />
+                    </div>
+
+                    <div class="ps-content">
+                        <h3 class="ps-title">El problema</h3>
+
+                        <ul class="ps-list">
+                            <li>
+                                <span class="ps-icon">❌</span>
+                                Desorden en competencias
+                            </li>
+                            <li>
+                                <span class="ps-icon">❌</span>
+                                Falta de visualización clara
+                            </li>
+                            <li>
+                                <span class="ps-icon">❌</span>
+                                Seguimiento manual
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- CONECTOR -->
+                <div class="ps-connector">
+                    <span></span>
+                </div>
+
+                <!-- SOLUCIÓN -->
+                <div class="ps-card ps-card--solution">
+                    <div class="ps-media">
+                        <img src="./assets/el diego contento.jpg" alt="Pelusa Play en acción" />
+                    </div>
+
+                    <div class="ps-content">
+                        <h3 class="ps-title">La solución con Pelusa Play</h3>
+
+                        <ul class="ps-list">
+                            <li>
+                                <span class="ps-icon">✅</span>
+                                Brackets automáticos
+                            </li>
+                            <li>
+                                <span class="ps-icon">✅</span>
+                                Resultados en tiempo real
+                            </li>
+                            <li>
+                                <span class="ps-icon">✅</span>
+                                Organización centralizada
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="features" id="features">
+
+            <div class="features__header">
+                <h2 class="features__title">Todo lo que necesitás para gestionar competencias</h2>
+                <p class="features__subtitle">
+                    BracketZone centraliza la creación, visualización y seguimiento de competencias
+                    en una sola plataforma, pensada para organizadores exigentes.
+                </p>
+            </div>
+
+            <div class="features__grid">
+
+                <!-- Feature 1 -->
+                <article class="feature-card">
+                    <div class="feature-media">
+                        <!-- Ícono o imagen -->
+                        <img src="./assets/iconos/bateria.png" alt="Creación rápida">
+                    </div>
+
+                    <div class="feature-content">
+                        <h3>Creación rápida</h3>
+                        <p>
+                            Configurá una competencia completa en cuestión de minutos. Definí rondas,
+                            participantes y formatos sin fricción ni configuraciones complejas.
+                        </p>
+                        <p>
+                            Ideal tanto para torneos pequeños como para estructuras más avanzadas,
+                            sin perder velocidad ni claridad.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Feature 2 -->
+                <article class="feature-card">
+                    <div class="feature-media">
+                        <img src="./assets/iconos/servidor.png" alt="Visualización clara">
+                    </div>
+
+                    <div class="feature-content">
+                        <h3>Visualización clara</h3>
+                        <p>
+                            Brackets limpios, ordenados y fáciles de entender desde el primer vistazo.
+                            Cada enfrentamiento está representado de forma visual y jerárquica.
+                        </p>
+                        <p>
+                            Los usuarios comprenden el estado de la competencia sin explicaciones
+                            adicionales ni curvas de aprendizaje.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Feature 3 -->
+                <article class="feature-card">
+                    <div class="feature-media">
+                        <img src="./assets/iconos/hora.png" alt="Seguimiento en tiempo real">
+                    </div>
+
+                    <div class="feature-content">
+                        <h3>Seguimiento en tiempo real</h3>
+                        <p>
+                            Resultados y estados actualizados automáticamente a medida que avanzan
+                            los encuentros, sin recargar la página.
+                        </p>
+                        <p>
+                            Organizadores y participantes siempre tienen la información correcta,
+                            en el momento justo.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Feature 4 -->
+                <article class="feature-card">
+                    <div class="feature-media">
+                        <img src="./assets/iconos/disciplina.png" alt="Multidisciplina">
+                    </div>
+
+                    <div class="feature-content">
+                        <h3>Multidisciplina</h3>
+                        <p>
+                            PelusaPlay se adapta a distintos tipos de competencias: deportes
+                            tradicionales, esports y juegos en general.
+                        </p>
+                        <p>
+                            Un único sistema flexible para múltiples disciplinas, formatos y reglas.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section class="how-it-works" id="how-it-works">
+
+            <div class="how-it-works__header">
+                <h2 class="how-it-works__title">Cómo funciona PelusaPlay</h2>
+                <p class="how-it-works__subtitle">
+                    Un proceso simple y ordenado para crear, gestionar y compartir competencias
+                    sin complicaciones.
+                </p>
+            </div>
+
+            <div class="steps">
+
+                <!-- Step 1 -->
+                <div class="step">
+                    <div class="step__index">01</div>
+
+                    <div class="step__media">
+                        <!-- Ícono o imagen -->
+                        <img src="./assets/iconos/bateria.png" alt="Crear competencia">
+                    </div>
+
+                    <div class="step__content">
+                        <h3>Creá tu competencia</h3>
+                        <p>
+                            Iniciá una nueva competencia definiendo el nombre, el formato y la estructura
+                            general. PelusaPlay te guía para que todo quede configurado correctamente
+                            desde el primer momento.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step">
+                    <div class="step__index">02</div>
+
+                    <div class="step__media">
+                        <img src="./assets/iconos/agregar-usuario.png" alt="Agregar participantes">
+                    </div>
+
+                    <div class="step__content">
+                        <h3>Agregá participantes</h3>
+                        <p>
+                            Sumá equipos o jugadores manualmente o mediante importación.
+                            La plataforma valida la información y organiza automáticamente
+                            a los participantes dentro del sistema.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step">
+                    <div class="step__index">03</div>
+
+                    <div class="step__media">
+                        <img src="./assets/iconos/cruce-de-caminos.png" alt="Generar cruces">
+                    </div>
+
+                    <div class="step__content">
+                        <h3>Generá los cruces</h3>
+                        <p>
+                            Con un solo clic, PelusaPlay genera los enfrentamientos de forma automática,
+                            respetando el formato elegido y asegurando una progresión clara de rondas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step">
+                    <div class="step__index">04</div>
+
+                    <div class="step__media">
+                        <img src="./assets/iconos/seguir.png" alt="Compartir resultados">
+                    </div>
+
+                    <div class="step__content">
+                        <h3>Compartí y seguí los resultados</h3>
+                        <p>
+                            Compartí la competencia con participantes y espectadores.
+                            Los resultados se actualizan en tiempo real, permitiendo
+                            un seguimiento claro y transparente.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="use-cases" id="use-cases">
+
+            <div class="use-cases__header">
+                <h2 class="use-cases__title">Casos de uso</h2>
+                <p class="use-cases__subtitle">
+                    PelusaPlay se adapta a distintos contextos, necesidades y tipos de organización,
+                    manteniendo siempre claridad y control.
+                </p>
+            </div>
+            <div class="use-cases__filters">
+                <button class="filter-btn is-active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="organizers">Organizadores</button>
+                <button class="filter-btn" data-filter="gamers">Gamers</button>
+                <button class="filter-btn" data-filter="amateur">Amateur</button>
+                <button class="filter-btn" data-filter="education">Educación</button>
+            </div>
+
+            <div class="use-cases__grid">
+
+                <!-- Caso 1 -->
+                <article class="use-case-card" data-type="organizers">
+                    <div class="use-case-media">
+                        <!-- Imagen o ícono -->
+                        <img src="./assets/CAPITANES-INTERNO_-95-1024x746.jpg" alt="Organizadores de eventos">
+                    </div>
+
+                    <div class="use-case-content">
+                        <h3>Organizadores de eventos</h3>
+                        <p>
+                            Gestioná competencias de cualquier escala con una estructura clara y
+                            profesional. PelusaPlay centraliza participantes, rondas y resultados
+                            en un solo lugar.
+                        </p>
+                        <p>
+                            Ideal para eventos presenciales o online que requieren orden, seguimiento
+                            en tiempo real y una presentación impecable.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Caso 2 -->
+                <article class="use-case-card" data-type="gamers">
+                    <div class="use-case-media">
+                        <img src="/assets/627bb6383de0d.jpeg" alt="Comunidades gamer">
+                    </div>
+
+                    <div class="use-case-content">
+                        <h3>Comunidades gamer</h3>
+                        <p>
+                            Organizá torneos internos, ligas o eventos especiales sin depender
+                            de herramientas externas o planillas manuales.
+                        </p>
+                        <p>
+                            Compartí Pelusa en tiempo real y mantené a la comunidad informada
+                            sobre cada enfrentamiento y resultado.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Caso 3 -->
+                <article class="use-case-card" data-type="amateur">
+                    <div class="use-case-media">
+                        <img src="/assets/Futbol5milan.png" alt="Torneos amateurs">
+                    </div>
+
+                    <div class="use-case-content">
+                        <h3>Torneos amateurs</h3>
+                        <p>
+                            Simplificá la organización de competencias locales o informales,
+                            evitando confusiones y errores comunes.
+                        </p>
+                        <p>
+                            PelusaPlay permite ofrecer una experiencia ordenada y clara,
+                            incluso sin experiencia previa en organización de torneos.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Caso 4 -->
+                <article class="use-case-card" data-type="education">
+                    <div class="use-case-media">
+                        <img src="/assets/torneos-deportivos-escolares.png" alt="Eventos educativos">
+                    </div>
+
+                    <div class="use-case-content">
+                        <h3>Eventos educativos</h3>
+                        <p>
+                            Aplicá dinámicas de competencia en contextos educativos, hackatones,
+                            talleres o evaluaciones gamificadas.
+                        </p>
+                        <p>
+                            Visualizá progresos, resultados y etapas de forma clara,
+                            fomentando la participación y el aprendizaje activo.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section class="final-cta" id="final-cta">
+
+            <div class="final-cta__inner">
+
+                <h2 class="final-cta__title">
+                    Empezá hoy a organizar competencias sin complicaciones
+                </h2>
+
+                <p class="final-cta__subtitle">
+                    Creá tu primera competencia en minutos y gestioná participantes,
+                    cruces y resultados desde un solo lugar.
+                </p>
+
+
+                <div class="final-cta__social">
+                    <span class="final-cta__counter-wrapper">
+                        <span class="final-cta__plus">+</span>
+                        <span class="final-cta__counter" data-target="1200">0</span>
+                    </span>
+
+                    <span class="final-cta__label">
+                        competencias creadas
+                        <em class="final-cta__microcopy">y creciendo</em>
+                    </span>
+                </div>
+
+
+
+                <a href="#" class="final-cta__button">
+                    Registrarse gratis
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+    <footer class="footer">
+        <div class="footer__container">
+
+            <!-- Brand -->
+            <div class="footer__brand">
+                <img src="./assets/iconos/pelusaplay-isologo.png" alt="PelusaPlay logo" class="footer__logo" />
+
+                <p class="footer__contact">soporte@PelusaPlay.com</p>
+                <a href="#" class="footer__link">Política de privacidad</a>
+            </div>
+
+            <!-- Menu -->
+            <nav class="footer__nav">
+                <h4 class="footer__title">Menú</h4>
+                <ul class="footer__list">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Características</a></li>
+                    <li><a href="#">Torneos</a></li>
+                    <li><a href="#">Planes</a></li>
+                    <li><a href="#">Contáctanos</a></li>
+                </ul>
+            </nav>
+
+            <!-- Downloads -->
+            <div class="footer__downloads">
+                <h4 class="footer__title">Descargas</h4>
+                <p class="footer__text">
+                    Puedes utilizar el sistema PelusaPlay en el sitio web y la aplicación.
+                </p>
+
+                <div class="footer__stores">
+                    <img src="./assets/iconos/googleplay.png" alt="Google Play" />
+                    <img src="./assets/iconos/appstore.png" alt="App Store" />
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Social -->
+        <div class="footer__social">
+            <a href="#" aria-label="Email"><img src="" alt="Email"></a>
+            <a href="#" aria-label="YouTube"><img src="" alt="YouTube"></a>
+            <a href="#" aria-label="WhatsApp"><img src="" alt="WhatsApp"></a>
+            <a href="#" aria-label="Telegram"><img src="" alt="Telegram"></a>
+        </div>
+
+        <!-- Legal -->
+        <div class="footer__bottom">
+            <p>© 2022 PelusaPlay . Todos los derechos reservados.</p>
+            <p>VitaDev – Desarrollo Web </p>
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="./js/scroll-smoth.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

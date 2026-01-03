@@ -1,0 +1,71 @@
+// Colors
+
+// Brand
+$color-primary: #00c6f8;   // Azul principal (acción / highlights)
+$color-secondary: #bfc20a; // Azul menta (hover / estados suaves)
+$color-dark: #080127;      // Azul oscuro (estructura / headers)
+$color-light: #ffffff;     // Blanco (fondos)
+
+// Neutrals
+$color-bg: #0B1220;        // Fondo general oscuro (modo dark)
+$color-surface: #111A2E;   // Cards / panels
+$color-border: rgba(255, 255, 255, 0.08);
+
+// Text
+$color-text-primary: #FFFFFF;
+$color-text-secondary: #B7C4D1;
+$color-text-muted: #7C8A99;
+
+// Feedback
+$color-success: $color-primary;
+$color-warning: #F4C430;
+$color-error: #E5533D;
+
+
+$font-primary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+$font-heading: 'Space Grotesk', 'Inter', sans-serif;
+
+// Font sizes
+$fs-xs: 0.75rem;   // 12px
+$fs-sm: 0.875rem;  // 14px
+$fs-base: 1rem;    // 16px
+$fs-lg: 1.125rem;  // 18px
+$fs-xl: 1.5rem;    // 24px
+$fs-2xl: 2rem;     // 32px
+$fs-3xl: 4rem;  // 44px
+
+// Font weights
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+// Radius
+$radius-sm: 6px;
+$radius-md: 12px;
+$radius-lg: 20px;
+
+// Shadows
+$shadow-card: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+// Transitions
+$transition-fast: 0.15s ease;
+$transition-base: 0.3s ease;
+/* ================= TRANSITIONS ================= */
+
+$transition-fast: 0.25s ease;
+$transition-base: 0.4s ease;
+$transition-slow: 0.7s cubic-bezier(.22, 1, .36, 1);
+
+/* ================= EASING ================= */
+
+$ease-out-smooth: cubic-bezier(.22, 1, .36, 1);
+$ease-in-out-soft: cubic-bezier(.4, 0, .2, 1);
+
+/* ================= SHADOWS ================= */
+
+$shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 10px 30px rgba(0, 0, 0, 0.25);
+$shadow-lg: 0 30px 60px rgba(0, 0, 0, 0.45);
+$shadow-glow: 0 0 20px rgba(0, 198, 248, 0.6);/* ================= FX COLORS ================= */
+

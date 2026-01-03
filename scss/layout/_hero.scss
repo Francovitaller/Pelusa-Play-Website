@@ -1,0 +1,162 @@
+@use "../base/variables" as v;
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: v.$color-light;
+
+    &__video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+    }
+
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 2;
+    }
+
+    &__container {
+        position: relative;
+        z-index: 3;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    &__visual {
+        position: relative;
+
+        .hero__bg {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 1.5rem;
+        }
+    }
+
+    &__phone {
+        position: absolute;
+        right: -40px;
+        bottom: -300px;
+
+        img {
+            width: 400px;
+        }
+    }
+
+    &__badges {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+
+        span {
+            background: rgba(204, 201, 0, 0.15);
+            padding: 0.3rem 0.8rem;
+            border-radius: 999px;
+            font-size: v.$fs-xs;
+            font-family: v.$font-primary;
+            font-weight: v.$fw-medium;
+            backdrop-filter: blur(6px);
+
+        }
+    }
+
+    &__title {
+        font-size: v.$fs-3xl;
+        font-family: v.$font-heading;
+        font-weight: v.$fw-bold;   
+        margin-bottom: 1.5rem;
+
+        span {
+            color: v.$color-primary;
+
+        }
+    }
+
+    &__features {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 2rem;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: v.$fs-base;
+            font-family: v.$font-primary;
+            font-weight: v.$fw-medium;
+            margin-bottom: 0.6rem;
+            opacity: 0.9;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        gap: 1rem;
+    }
+}
+
+.hero__content > * {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.hero__badges { animation-delay: 0.1s; }
+.hero__title { animation-delay: 0.25s; }
+.hero__features { animation-delay: 0.45s; }
+.hero__actions { animation-delay: 0.65s; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero__phone {
+    opacity: 0;
+    transform: translateX(60px) scale(0.95);
+    animation: phoneIn 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes phoneIn {
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.hero__rotating {
+    display: inline-block;
+    position: relative;
+    color: #6EC1E4; 
+}
+
+#rotating-text {
+    display: inline-block;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.rotate-out {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.rotate-in {
+    opacity: 1;
+    transform: translateY(0);
+}

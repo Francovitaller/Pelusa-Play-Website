@@ -1,0 +1,119 @@
+@use '../base/variables' as v;
+
+
+.features {
+    width: 100%;
+    height: auto;
+    padding: 6rem 2rem;
+    background-image: url(/assets/el\ diego.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.features__header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.features__title {
+    font-family: v.$font-heading;
+    font-size: v.$fs-3xl;
+    font-weight: v.$fw-bold;
+    color: v.$color-text-primary;
+    margin-bottom: 1rem;
+}
+
+.features__subtitle {
+    font-family: v.$font-primary;
+    font-size: v.$fs-lg;
+    color: v.$color-text-secondary;
+}
+
+/* ---------- Grid ---------- */
+.features__grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+}
+
+/* ---------- Card ---------- */
+.feature-card {
+    background: v.$color-surface;
+    border: 2px solid transparent;
+    border-radius: v.$radius-lg;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1.5rem;
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+        transform v.$transition-slow,
+        opacity v.$transition-base,
+        box-shadow v.$transition-base,
+        border-color v.$transition-base;
+
+    &.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    &:hover {
+        box-shadow: v.$shadow-lg;
+        border-color: v.$color-primary; 
+    }
+}
+
+/* ---------- Media ---------- */
+.feature-media {
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    border-radius: v.$radius-md;
+    background: rgba(0, 198, 248, 0.12);
+
+    img {
+        width: 32px;
+        height: 32px;
+
+    }
+}
+
+/* ---------- Content ---------- */
+.feature-content {
+    h3 {
+        font-family: v.$font-heading;
+        font-size: v.$fs-lg;
+        font-weight: v.$fw-semibold;
+        color: v.$color-text-primary;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        font-family: v.$font-primary;
+        font-size: v.$fs-base;
+        color: v.$color-text-secondary;
+        line-height: 1.6;
+        margin: 0;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;    
+        }
+    }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    .features__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        grid-template-columns: auto 1fr;
+    }
+}

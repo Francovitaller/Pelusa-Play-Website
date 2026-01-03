@@ -1,0 +1,64 @@
+@use '../base/variables' as v;
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(8, 1, 39, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid v.$color-border;
+}
+
+.site-header__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* LOGO */
+
+.site-header__logo {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    img {
+        height: 36px;
+    }
+}
+
+/* NAV */
+
+.site-header__nav {
+    display: flex;
+    gap: 2rem;
+
+    button {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+
+        font-size: v.$fs-sm;
+        font-weight: v.$fw-medium;
+        color: v.$color-text-secondary;
+        transition: color v.$transition-fast;
+
+        &:hover {
+            color: v.$color-text-primary;
+        }
+    }
+}
+
+/* ACTIONS */
+
+.site-header__actions {
+    display: flex;
+    gap: 1rem;
+}

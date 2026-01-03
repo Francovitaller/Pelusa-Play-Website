@@ -1,0 +1,144 @@
+@use "../base/variables" as v;
+
+.footer {
+    background-color: v.$color-light;
+    padding: 4rem 2rem 2rem;
+    color: v.$color-dark;
+    text-align: left;
+
+    &__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    &__logo {
+        width: 120px;
+        margin: -10px 0;
+    }
+
+    &__contact {
+        font-size: v.$fs-sm;
+        font-family: v.$font-primary;
+        color: v.$color-dark;
+        margin: 0.5rem 0 1.5rem;
+    }
+
+    &__link {
+        display: block;
+        font-size: v.$fs-sm;
+        font-family: v.$font-primary;
+        color: v.$color-dark;
+        text-decoration: none;
+        margin-bottom: 0.5rem;
+        transition: color v.$transition-base;
+
+        &:hover {
+            color: v.$color-primary;
+        }
+    }
+
+    &__title {
+        position: relative;
+        font-size: v.$fs-xl;
+        font-weight: v.$fw-bold;
+        font-family: v.$font-heading;
+        margin-bottom: 1rem;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 24px;
+            background-color: v.$color-primary;
+        }
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1.5rem 0;
+
+        li {
+            margin-bottom: 0.5rem;
+
+        }
+
+        a {
+            font-size: v.$fs-sm;
+            font-family: v.$font-primary;
+            color: v.$color-dark;
+            text-decoration: none;
+            transition: color v.$transition-base;
+
+            &:hover {
+                color: v.$color-primary;
+
+            }
+        }
+    }
+
+    &__text {
+        font-size: v.$fs-sm;
+        font-family: v.$font-primary;
+        color: v.$color-dark;
+        margin-bottom: 1.5rem;
+    }
+
+    &__stores {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+        a {
+            display: inline-block;
+        }
+
+        img {
+            height: 40px;
+            width: auto;
+
+        }
+    }
+
+    &__social {
+        margin-top: 1rem;
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+
+        a {
+            font-size: v.$fs-lg;
+            color: v.$color-dark;
+            transition: color v.$transition-base;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 50%;
+            transition: background-color v.$transition-base;
+            padding: 0.5rem;
+            margin: 0.5rem;
+
+            &:hover {
+                color: v.$color-light;
+                background-color: v.$color-primary;
+            }
+        }
+    }
+
+    &__bottom {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        padding-top: 1rem;
+        font-size: v.$fs-xs;
+        font-family: v.$font-primary;
+        color: v.$color-dark;
+        p {
+            margin: 0;
+            text-align: center;
+        }
+    }
+}
