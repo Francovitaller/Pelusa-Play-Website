@@ -129,16 +129,108 @@
             }
         }
     }
+    }
 
-    &__bottom {
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-        padding-top: 1rem;
-        font-size: v.$fs-xs;
-        font-family: v.$font-primary;
-        color: v.$color-dark;
-        p {
-            margin: 0;
-            text-align: center;
+
+    @media (max-width: 1024px) {
+    .footer {
+        padding: 3rem 1.5rem 1.5rem;
+
+        &__container {
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        &__logo {
+            width: 100px;
+        }
+
+        &__title {
+            font-size: v.$fs-lg;
+
+            &::before {
+                height: 20px;
+            }
+        }
+
+        &__contact,
+        &__text,
+        &__link,
+        &__list a {
+            font-size: v.$fs-xs;
+        }
+
+        &__stores {
+            gap: 0.75rem;
+
+            img {
+                height: 36px;
+            }
+        }
+
+        &__social {
+            gap: 0.75rem;
+
+            a {
+                font-size: v.$fs-sm;
+                padding: 0.45rem;
+                margin: 0.25rem;
+            }
+        }
+    }
+}
+@media (max-width: 640px) {
+    .footer {
+        padding: 2.5rem 1rem 1.5rem;
+        text-align: center;
+
+        &__container {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        &__logo {
+            margin: 0 auto;
+        }
+
+        &__title {
+            font-size: v.$fs-sm;
+            padding-left: 0;
+
+            &::before {
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        &__contact,
+        &__text {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 280px;
+        }
+
+        &__list {
+            margin-bottom: 1rem;
+        }
+
+        &__stores {
+            justify-content: center;
+
+            img {
+                height: 34px;
+            }
+        }
+
+        &__social {
+            justify-content: center;
+            margin-bottom: 1.5rem;
+
+            a {
+                font-size: v.$fs-sm;
+                padding: 0.6rem;
+            }
         }
     }
 }

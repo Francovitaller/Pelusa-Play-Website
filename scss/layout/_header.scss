@@ -1,64 +1,258 @@
 @use '../base/variables' as v;
 
 .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(8, 1, 39, 0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid v.$color-border;
-}
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 1000;
 
-.site-header__inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 2rem;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    transition: all v.$transition-base;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+    &__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 14px 32px;
 
-/* LOGO */
-
-.site-header__logo {
-    display: flex;
-    align-items: center;
-    background: none;
-    border: none;
-    cursor: pointer;
-
-    img {
-        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
     }
-}
 
-/* NAV */
+    &__logo img {
+        height: 150px;
+        margin: -40px;
+        width: auto;
+        transition: transform v.$transition-fast;
+    }
 
-.site-header__nav {
-    display: flex;
-    gap: 2rem;
+    &__logo:hover img {
+        transform: scale(1.05);
+    }
 
-    button {
-        background: none;
-        border: none;
-        padding: 0;
-        cursor: pointer;
+    &__nav {
+        .nav-list {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
 
-        font-size: v.$fs-sm;
-        font-weight: v.$fw-medium;
-        color: v.$color-text-secondary;
-        transition: color v.$transition-fast;
+        .nav-link {
+            background: none;
+            border: none;
+            font: inherit;
+            cursor: pointer;
+            color: v.$color-dark;
+            position: relative;
+        }
 
-        &:hover {
-            color: v.$color-text-primary;
+        .has-submenu {
+            position: relative;
+
+            &:hover .submenu {
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+        }
+
+        .submenu {
+            position: absolute;
+            top: 140%;
+            left: 0;
+
+            background: v.$color-light;
+            border-radius: 8px;
+            box-shadow: v.$shadow-md;
+
+            padding: 8px 0;
+            min-width: 180px;
+
+            opacity: 0;
+            transform: translateY(10px);
+            pointer-events: none;
+            transition: all v.$transition-fast;
+
+            li a {
+                display: block;
+                padding: 10px 16px;
+                color: v.$color-dark;
+
+                &:hover {
+                    background-color: gray;
+                }
+            }
         }
     }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
 }
 
-/* ACTIONS */
+/* ================= SCROLL ================= */
 
-.site-header__actions {
-    display: flex;
-    gap: 1rem;
+.site-header.is-scrolled {
+    background-color: rgba(8, 1, 39, 0.65);
+    backdrop-filter: blur(14px);
+    box-shadow: v.$shadow-md;
+
+    a,
+    input {
+        color: v.$color-text-primary;
+    }
+
+    input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+    }
+}
+
+.header-search input {
+    background: transparent;
+    border: 1px solid gray;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 14px;
+
+    &:focus {
+        outline: none;
+        border-color: v.$color-primary;
+    }
+}
+
+//responsive
+
+@media (max-width: 1024px) {
+    .site-header {
+        &__inner {
+            padding: 12px 24px;
+            gap: 16px;
+        }
+
+        &__logo img {
+            height: 110px;
+            margin: -28px;
+        }
+
+        &__nav {
+            .nav-list {
+                gap: 16px;
+            }
+
+            .nav-link {
+                font-size: v.$fs-sm;
+            }
+
+            .submenu {
+                top: 130%;
+                min-width: 160px;
+
+                li a {
+                    padding: 8px 14px;
+                }
+            }
+        }
+
+        &__actions {
+            gap: 12px;
+        }
+    }
+
+    .header-search input {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+}
+@media (max-width: 768px) {
+    .site-header {
+        &__inner {
+            padding: 10px 16px;
+        }
+
+        &__logo img {
+            height: 80px;
+            margin: -18px;
+        }
+
+        &__nav {
+            position: fixed;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+
+            transform: translateY(-120%);
+            opacity: 0;
+            pointer-events: none;
+            transition: all v.$transition-base;
+
+            .nav-list {
+                flex-direction: column;
+                gap: 0;
+                padding: 1rem 0;
+            }
+
+            .nav-link {
+                width: 100%;
+                text-align: left;
+                padding: 14px 20px;
+                font-size: v.$fs-base;
+            }
+
+            .has-submenu {
+                &:hover .submenu {
+                    opacity: 0;
+                    pointer-events: none;
+                }
+            }
+
+            .submenu {
+                position: static;
+                transform: none;
+                opacity: 1;
+                pointer-events: auto;
+                box-shadow: none;
+                background: transparent;
+                padding: 0;
+
+                li a {
+                    padding: 10px 32px;
+                    font-size: v.$fs-sm;
+                }
+            }
+        }
+
+        &__nav.is-open {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        &__actions {
+            gap: 8px;
+        }
+    }
+
+    .header-search {
+        display: none;
+    }
+}
+
+.header-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .header-toggle {
+        display: inline-flex;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: v.$color-dark;
+    }
 }

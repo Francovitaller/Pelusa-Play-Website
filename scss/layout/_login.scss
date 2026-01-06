@@ -1,0 +1,228 @@
+@use '../base/variables' as v;
+
+/* ================= OVERLAY ================= */
+
+.login-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    background: rgba(8, 1, 39, 0.75);
+    backdrop-filter: blur(8px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity v.$transition-slow;
+
+    &.is-active {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+/* ================= MODAL ================= */
+
+.login-modal {
+    background: v.$color-surface;
+    border-radius: v.$radius-lg;
+    width: 100%;
+    max-width: 420px;
+    padding: 2.5rem;
+    position: relative;
+
+    box-shadow: v.$shadow-lg;
+    border: 1px solid v.$color-border;
+
+    transform: translateY(30px) scale(0.96);
+    opacity: 0;
+
+    transition:
+        transform v.$transition-slow,
+        opacity v.$transition-base;
+
+    .login-overlay.is-active & {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+/* ================= TEXT ================= */
+
+.login-modal__title {
+    font-family: v.$font-primary;
+    font-size: v.$fs-xl;
+    font-weight: v.$fw-semibold;
+    color: v.$color-text-primary;
+}
+
+.login-modal__subtitle {
+    font-family: v.$font-primary;
+    font-size: v.$fs-sm;
+    color: v.$color-text-muted;
+    margin-bottom: 1.75rem;
+}
+
+/* ================= CLOSE ================= */
+
+.login-modal__close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+
+    background: none;
+    border: none;
+    color: v.$color-text-muted;
+    font-size: 1.25rem;
+    cursor: pointer;
+
+    &:hover {
+        color: v.$color-primary;
+    }
+}
+
+/* ================= GOOGLE ================= */
+
+.login-google {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    padding: 0.75rem;
+    background: transparent;
+    border: 1px solid v.$color-border;
+    border-radius: v.$radius-md;
+    color: v.$color-text-primary;
+    cursor: pointer;
+    img {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    height: 5vh;
+    }
+}
+
+/* ================= DIVIDER ================= */
+
+.login-divider {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+
+    &::before,
+    &::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: v.$color-border;
+    }
+
+    span {
+        margin: 0 .75rem;
+        color: v.$color-text-muted;
+        font-size: v.$fs-xs;
+    }
+}
+
+/* ================= FORM ================= */
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+
+    input {
+        background: v.$color-bg;
+        border: 1px solid v.$color-border;
+        border-radius: v.$radius-md;
+        padding: 0.75rem;
+        color: v.$color-text-primary;
+    }
+}
+.login-footer {
+    font-family: v.$font-primary;
+    margin-top: 1.25rem;
+    text-align: center;
+    font-size: v.$fs-xs;
+    color: v.$color-text-muted;
+}
+
+
+
+@media (max-width: 768px) {
+
+    .login-overlay {
+        padding: 1.5rem;
+        align-items: flex-start;
+    }
+
+    .login-modal {
+        width: 100%;
+        max-width: 100%;
+        padding: 2rem 1.5rem;
+        margin-top: 10vh;
+    }
+
+    .login-modal__title {
+        font-size: v.$fs-lg;
+    }
+
+    .login-modal__subtitle {
+        font-size: v.$fs-xs;
+        margin-bottom: 1.25rem;
+    }
+
+    .login-google {
+        grid-template-columns: 48px 1fr;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+
+        img {
+            width: 28px;
+            height: 28px;
+        }
+    }
+
+    .login-form input {
+        padding: 0.85rem;
+        font-size: v.$fs-sm;
+    }
+
+    .login-footer {
+        font-size: 0.7rem;
+    }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+
+    .login-modal {
+        padding: 1.5rem 1.25rem;
+        margin-top: 8vh;
+    }
+
+    .login-modal__close {
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .login-google {
+        grid-template-columns: 1fr;
+        text-align: center;
+
+        img {
+            margin-bottom: 0.25rem;
+        }
+    }
+
+    .login-divider span {
+        font-size: 0.65rem;
+    }
+}

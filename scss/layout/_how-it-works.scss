@@ -151,14 +151,137 @@
     font-weight: v.$fw-regular;
     color: v.$color-text-secondary;
 }
+@media (max-width: 1024px) {
+    .how-it-works {
+        padding: 4.5rem 1.5rem;
+    }
 
-/* ---------- Mobile ---------- */
-@media (max-width: 768px) {
+    .how-it-works__header {
+        margin-bottom: 2.5rem;
+
+        .how-it-works__title{
+            font-size: 2rem;
+        }
+        .how-it-works__subtitle{
+            font-size: 20px;
+        }
+
+        .hiw-heading {
+            font-size: v.$fs-2xl;
+        }
+    }
+
     .steps {
-        padding-left: 2.5rem;
+        max-width: 520px;
+        padding-left: 3rem;
+    }
+
+    .steps::before,
+    .steps::after {
+        left: 20px;
+    }
+
+    .step {
+        padding: 1.75rem 1.25rem 1.75rem 3rem;
+        margin-bottom: 1.75rem;
     }
 
     .step::before {
-        left: -2.6rem;
+        left: -3.1rem;
+        width: 12px;
+        height: 12px;
+    }
+
+    .step__index {
+        font-size: 2.25rem;
+    }
+
+    .step__media img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .step__content h3 {
+        font-size: v.$fs-lg;
+    }
+
+    .step__content p {
+        font-size: v.$fs-sm;
+    }
+}
+@media (max-width: 768px) {
+    .how-it-works {
+        padding: 3.5rem 1rem;
+    }
+
+    .how-it-works__header {
+        text-align: center;
+        margin-bottom: 2rem;
+        
+        .how-it-works__title{
+            font-size: 2rem;
+        }
+        .how-it-works__subtitle{
+            font-size: 20px;
+        }
+        .hiw-eyebrow {
+            font-size: v.$fs-xs;
+        }
+
+        .hiw-heading {
+            font-size: v.$fs-xl;
+            line-height: 1.2;
+        }
+    }
+
+    .steps {
+        max-width: 100%;
+        padding-left: 2.25rem;
+    }
+
+    .steps::before,
+    .steps::after {
+        left: 16px;
+    }
+
+    .step {
+        padding: 1.5rem 1rem 1.5rem 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .step::before {
+        left: -2.4rem;
+        top: 2rem;
+    }
+
+    .step__index {
+        font-size: 2rem;
+    }
+
+    .step__media img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .step__content h3 {
+        font-size: v.$fs-sm;
+    }
+
+    .step__content p {
+        font-size: v.$fs-xs;
+        line-height: 1.5;
+    }
+}
+@media (max-width: 480px) {
+    .step {
+        padding-left: 2.25rem;
+    }
+
+    .step::before {
+        left: -2.2rem;
+    }
+
+    .step__index {
+        font-size: 1.75rem;
     }
 }

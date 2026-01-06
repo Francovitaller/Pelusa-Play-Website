@@ -1,23 +1,18 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const triggers = document.querySelectorAll('[data-scroll]');
+const header = document.getElementById('siteHeader');
 
-    triggers.forEach(el => {
-        el.addEventListener('click', e => {
-            e.preventDefault();
+let lastScroll = 0;
 
-            const targetSelector = el.dataset.target;
-            if (!targetSelector) return;
+window.addEventListener('scroll', () => {
+  const currentScroll = window.scrollY;
 
-            const target = document.querySelector(targetSelector);
-            if (!target) return;
+  if (currentScroll > 60) {
+    header.classList.add('is-scrolled');
+  } else {
+    header.classList.remove('is-scrolled');
+  }
 
-            const headerOffset = document.querySelector('.site-header')?.offsetHeight || 0;
-            const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerOffset;
-
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        });
-    });
+  lastScroll = currentScroll;
 });
+
+const params = new URLSearchParams(window.location.search);
+const query = params.get('q');

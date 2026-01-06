@@ -8,43 +8,121 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css'>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <div class="login-overlay" id="loginOverlay">
 
+        <div class="login-modal">
+            <button class="login-modal__close" id="closeLogin">✕</button>
 
-<header class="site-header">
-    <div class="site-header__inner">
+            <h2 class="login-modal__title">Bienvenido</h2>
+            <p class="login-modal__subtitle">Accedé a tu cuenta</p>
 
-        <!-- Logo -->
-        <button class="site-header__logo" data-scroll data-target="#hero">
-            <img src="./assets/iconos/pelusaplay-isologo.png" alt="Pelusa Play" />
-        </button>
-
-        <!-- Nav -->
-        <nav class="site-header__nav">
-            <button data-scroll data-target="#features">Producto</button>
-            <button data-scroll data-target="#how-it-works">Cómo funciona</button>
-            <button data-scroll data-target="#use-cases">Casos de uso</button>
-        </nav>
-
-        <!-- Actions -->
-        <div class="site-header__actions">
-            <a href="/login" class="btn btn--secondary btn--sm">Iniciar sesión</a>
-
-            <button
-                class="btn btn--primary btn--sm"
-                data-scroll
-                data-target="#final-cta"
-            >
-                Registrarse
+            <button class="login-google">
+                <img src="https://www.svgrepo.com/show/475656/google-color.svg">
+                Continuar con Google
             </button>
+
+            <div class="login-divider"><span>o</span></div>
+
+            <form class="login-form">
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Contraseña" />
+                <button class="btn btn--primary">Iniciar sesión</button>
+            </form>
+
+            <p class="login-footer">
+                ¿No tenés cuenta? <a href="#">Registrate</a>
+            </p>
         </div>
 
     </div>
-</header>
 
+    <header class="site-header" id="siteHeader">
+        <div class="site-header__inner">
+
+            <!-- Logo -->
+            <a href="index.html" class="site-header__logo">
+                <img src="./assets/iconos/pelusaplay-isologo.png" alt="Pelusa Play" />
+            </a>
+
+            <!-- Nav -->
+            <nav class="site-header__nav">
+                <ul class="nav-list">
+                    <li class="nav-item has-submenu">
+                        <button class="nav-link">Producto</button>
+                        <ul class="submenu">
+                            <li><a href="">Características</a></li>
+                            <li><a href="">Planes</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Cómo funciona</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="casos.html" class="nav-link">Casos de uso</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Actions -->
+            <div class="site-header__actions">
+
+                <!-- Search -->
+                <form class="header-search" action="buscar.html">
+                    <input type="search" name="q" placeholder="Buscar…" aria-label="Buscar" />
+                </form>
+
+                <a href="registro.html" class="btn btn--primary btn--sm">
+                    Regístrate
+                </a>
+
+                <a class="btn btn--primary btn--sm" id="openLogin">
+                    Iniciar sesión
+                </a>
+
+            </div>
+        </div>
+    </header>
+
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-modal">
+
+            <button class="login-modal__close" id="closeLogin">✕</button>
+
+            <h2 class="login-modal__title">Bienvenido</h2>
+            <p class="login-modal__subtitle">Accedé a tu cuenta</p>
+
+            <button class="login-google">
+                <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="">
+                Continuar con Google
+            </button>
+
+            <div class="login-divider">
+                <span>o</span>
+            </div>
+
+            <form class="login-form">
+                <input type="email" placeholder="Email" required />
+                <input type="password" placeholder="Contraseña" required />
+
+                <button type="submit" class="btn btn--primary">
+                    Iniciar sesión
+                </button>
+            </form>
+
+            <p class="login-footer">
+                ¿No tenés cuenta?
+                <a href="#">Registrate</a>
+            </p>
+
+        </div>
+    </div>
 
 
 
@@ -92,9 +170,9 @@
                     </ul>
 
                     <div class="hero__actions">
-<a href="javascript:void(0)" data-scroll data-target="#final-cta">
+                        <a href="#" class="btn btn--primary" class="open-login" id="openLogin">Crear Torneo Gratis</a>
 
-                        <a href="#" class="btn btn--ghost">Ver demo</a>
+                        <a href="#" class="btn btn--ghost" class="open-login" id="openLogin">Ver demo</a>
                     </div>
                 </div>
 
@@ -486,13 +564,7 @@
                         <em class="final-cta__microcopy">y creciendo</em>
                     </span>
                 </div>
-
-
-
-                <a href="#" class="final-cta__button">
-                    Registrarse gratis
-                </a>
-
+                <a class="btn btn--primary btn--sm" id="openLogin">Iniciar sesión</a>
             </div>
 
         </section>
@@ -538,10 +610,10 @@
 
         <!-- Social -->
         <div class="footer__social">
-            <a href="#" aria-label="Email"><img src="" alt="Email"></a>
-            <a href="#" aria-label="YouTube"><img src="" alt="YouTube"></a>
-            <a href="#" aria-label="WhatsApp"><img src="" alt="WhatsApp"></a>
-            <a href="#" aria-label="Telegram"><img src="" alt="Telegram"></a>
+            <a href="#" aria-label="Email"><i class="fi fi-rs-envelope"></i></a>
+            <a href=""><i class="fi fi-brands-youtube"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fi fi-brands-whatsapp"></i></a>
+            <a href="#" aria-label="Telegram"><i class="fi fi-brands-telegram"></i></a>
         </div>
 
         <!-- Legal -->
@@ -553,6 +625,7 @@
 
 
     <!-- Scripts -->
+    <script src="./js/login.js"></script>
     <script src="./js/scroll-smoth.js"></script>
     <script src="./js/main.js"></script>
 </body>
